@@ -74,7 +74,7 @@ namespace Knowit.EPiModules.ImageScaling
             }
             else
             {
-                var imageActions = GetImageActions(context.Request);
+                var imageActions = GetImageActions(context.Request, imageFile);
 
                 if (imageActions != null)
                 {
@@ -95,7 +95,7 @@ namespace Knowit.EPiModules.ImageScaling
         #endregion
 
         #region Must be implemented
-        protected abstract List<ImageOperation> GetImageActions(HttpRequest request);
+        protected abstract List<ImageOperation> GetImageActions(HttpRequest request, T imageFile);
         #endregion
 
         #region Overrideable

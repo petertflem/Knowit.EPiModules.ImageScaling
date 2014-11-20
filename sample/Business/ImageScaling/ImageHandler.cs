@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Web;
 using EPiServer.ImageLibrary;
-using EPiServer.Web;
 using Knowit.EPiModules.ImageScaling.Sample.Models.Media;
 
 namespace Knowit.EPiModules.ImageScaling.Sample.Business.ImageScaling
 {
     public class ImageHandler : BaseImageHandler<ImageMedia>
     {
-        protected override List<ImageOperation> GetImageActions(HttpRequest request)
+        protected override List<ImageOperation> GetImageActions(HttpRequest request, ImageMedia imageFile)
         {
             return ImageOperationPresets.Get(GetPresetFromRequest(request));
         }
